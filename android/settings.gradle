@@ -1,0 +1,3 @@
+rootProject.name = 'compteur'
+
+include ':app'
