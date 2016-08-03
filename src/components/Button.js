@@ -1,4 +1,5 @@
 // @flow
+
 import React, { Component, PropTypes } from 'react';
 import {
   View,
@@ -30,7 +31,7 @@ export default class Button extends Component {
   props: ButtonProps;
 
   static propTypes = {
-    label: PropTypes.string,
+    label: PropTypes.string.isRequired,
     onPress: PropTypes.func.isRequired,
     style: View.propTypes.style,
   };

@@ -1,11 +1,6 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+// @flow
 
-import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
-import compteur from './src/CounterController';
+import compteur from './src/containers/AppProvider';
 
 AppRegistry.registerComponent('compteur', () => compteur);

@@ -1,12 +1,15 @@
-import alt from '../alt';
+// @flow
 
-class CounterActions {
-  constructor() {
-    this.generateActions(
-      'increment',
-      'decrement'
-    )
-  }
+import { INCREMENT, DECREMENT } from '../types/CounterTypes';
+
+export type CounterActionType = {
+  type: string,
+};
+
+export function increment(): CounterActionType {
+  return { type: INCREMENT };
 }
 
-export default alt.createActions(CounterActions);
+export function decrement() {
+  return { type: DECREMENT };
+}
