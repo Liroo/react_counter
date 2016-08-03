@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { increment, decrement } from '../actions/CounterActions';
 import type { CounterReducerStateType, CounterReducerActionType } from '../reducers/CounterReducer';
-import AppComponent from '../components/AppComponent';
+import Counter from '../components/base/Counter';
 import AppStateType from '../reducers/IndexReducer';
 
 function getCounterState(appState: AppStateType): CounterReducerStateType {
@@ -12,10 +12,4 @@ function getCounterState(appState: AppStateType): CounterReducerStateType {
     counterValue: appState.counterState.counterValue,
   };
 }
-function getCounterActions(dispatch: Function) : CounterReducerActionType {
-  return {
-    actions: bindActionCreators({ increment, decrement }, dispatch),
-  };
-}
-
-export default connect(getCounterState, getCounterActions)(AppComponent);
+export default connect(getCounterState)(Counter);

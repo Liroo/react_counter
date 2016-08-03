@@ -1,8 +1,7 @@
 // @flow
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import {
-  View,
   Text,
   TouchableOpacity,
   StyleSheet,
@@ -14,7 +13,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgb(161, 235, 208)',
     // margin: 3,
     alignItems: 'center',
+    alignSelf: 'center',
     justifyContent: 'center',
+    minWidth: 100,
   },
   label: {
     fontSize: 16,
@@ -22,24 +23,18 @@ const styles = StyleSheet.create({
 });
 
 type ButtonProps = {
-  label: string,
-  onPress: Function,
+  label?: string,
+  actions: Function,
   style?: Object,
 };
 
 export default class Button extends Component {
   props: ButtonProps;
 
-  static propTypes = {
-    label: PropTypes.string.isRequired,
-    onPress: PropTypes.func.isRequired,
-    style: View.propTypes.style,
-  };
-
   render() {
-    const { label, style, onPress } = this.props;
+    const { label, actions, style } = this.props;
     return (
-      <TouchableOpacity style={[styles.container, style]} onPress={ onPress }>
+      <TouchableOpacity style={[styles.container, style]} onPress={ actions }>
         <Text style={styles.label}>{label}</Text>
       </TouchableOpacity>
     );

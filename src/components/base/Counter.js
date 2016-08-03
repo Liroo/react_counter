@@ -3,7 +3,6 @@ import React, { Component, PropTypes } from 'react';
 import {
   Text,
   StyleSheet,
-  View,
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -14,7 +13,6 @@ const styles = StyleSheet.create({
 });
 type CounterProps = {
   counterValue: number,
-  style?: Object,
 }
 
 export default class Counter extends Component {
@@ -22,13 +20,12 @@ export default class Counter extends Component {
 
   static propTypes = {
     counterValue: PropTypes.number,
-    style: View.propTypes.style,
   };
 
   render() {
-    const { counterValue, style } = this.props;
+    const { counterValue } = this.props;
     return (
-      <Text style={[styles.textCounter, style]}>{counterValue}</Text>
+      <Text style={styles.textCounter}>{counterValue}</Text>
     );
   }
 }

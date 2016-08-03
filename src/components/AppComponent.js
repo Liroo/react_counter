@@ -4,9 +4,9 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import Button from '../components/Button';
-import Counter from '../components/Counter';
-import type { CounterReducerActionType } from '../reducers/indexReducer';
+import CounterContainer from '../containers/CounterContainer';
+import IncButtonContainer from '../containers/IncButtonContainer';
+import DecButtonContainer from '../containers/DecButtonContainer';
 
 const styles = StyleSheet.create({
   container: {
@@ -19,27 +19,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
   },
+  button: {
+    margin: 20,
+  },
 });
 
-type AppContainerProps = {
-  counterValue: number,
-  actions: CounterReducerActionType,
-};
-
 class AppComponent extends Component {
-  props: AppContainerProps;
 
-  constructor(props) {
-    super(props);
-  }
   render() {
-    const { counterValue, actions } = this.props;
     return (
       <View style={styles.container}>
-        <Counter counterValue={counterValue} />
+        <CounterContainer />
         <View style={styles.buttonContainer}>
-          <Button label={"Down"} onPress={actions.decrement} />
-          <Button label={"Up"} onPress={actions.increment} />
+          <DecButtonContainer label={"Down"} style={styles.button}/>
+          <IncButtonContainer label={"Up"} style={styles.button}/>
         </View>
       </View>
     );

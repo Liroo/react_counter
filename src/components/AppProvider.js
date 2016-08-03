@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import AppContainer from './AppContainer';
+import AppComponent from '../components/AppComponent';
 import IndexReducer from '../reducers/IndexReducer';
 
 class CounterProvider extends Component {
@@ -13,7 +13,7 @@ class CounterProvider extends Component {
     const store = createStore(IndexReducer, applyMiddleware(thunk));
     return (
       <Provider store={store}>
-        <AppContainer />
+        <AppComponent />
       </Provider>
     );
   }
