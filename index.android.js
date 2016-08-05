@@ -6,6 +6,6 @@
 
 import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
-import compteur from './src/compteur';
+import compteur from './src/CounterController';
 
 AppRegistry.registerComponent('compteur', () => compteur);
